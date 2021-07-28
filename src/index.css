@@ -1,0 +1,514 @@
+/* Table of content
+00. Reset
+  0. Global variables
+  1. Global styles
+  2. typography
+  3. Layout
+  4. Components
+  */
+
+/* ================
+    Reset
+    ================*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Reset Select */
+select {
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: var(--btn-secondary-color);
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+ul,
+li {
+  display: block;
+}
+
+/* ================
+  Global variables
+  ================*/
+:root {
+  --accent-color: hsl(207, 60%, 23%);
+  --hdr-color: hsl(195, 47%, 40%);
+  --text-primary: hsla(0, 0%, 5%, 0.95);
+  --text-secondary: hsla(0, 0%, 85%, 0.9);
+  --btn-color: hsla(0, 5%, 48%, 0.9);
+  --btn-secondary-color: hsla(0, 3%, 30%, 0.9);
+}
+
+/* ================
+  Global styles
+  ================*/
+body {
+  margin: 0;
+  height: 100vh;
+  background: hsla(40, 3%, 90%, 0.95);
+}
+
+header {
+  background-color: var(--hdr-color);
+  color: var(--text-secondary);
+}
+
+h1 {
+  display: block;
+  margin: auto;
+}
+
+h2 {
+  color: var(--btn-secondary-color);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5rem;
+}
+
+h3 {
+  color: var(--btn-secondary-color);
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+button {
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+  height: 2.5em;
+  text-indent: 0px;
+  text-shadow: none;
+  font-style: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  line-height: 1.5;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:hover,
+button:focus,
+button:active {
+  background-color: var(--accent-color);
+}
+
+button:disabled {
+  background: #dddddd;
+  color: hsl(0, 0%, 35%);
+  cursor: not-allowed;
+}
+
+footer {
+  background-color: var(--hdr-color);
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 1rem;
+}
+
+/* ================
+Typography
+================*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+select {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+/* ================
+Layout
+================*/
+
+#root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dateAndPlacePicker {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.maps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* ================
+Components
+================*/
+
+.upper-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-logo {
+  height: 10rem;
+  width: 10rem;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+
+.site-title {
+  text-align: center;
+}
+
+.download {
+  display: inline-block;
+  background-color: var(--btn-color);
+  box-shadow: 0 5px 0 var(--btn-secondary-color);
+  color: white;
+  margin: 1rem;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.download:hover {
+  background-color: var(--btn-secondary-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.download:active {
+  box-shadow: none;
+  top: 5px;
+}
+.download:visited {
+  box-shadow: 0 5px 0 purple;
+}
+
+.leaflet-container {
+  margin-bottom: 1rem;
+}
+
+.leaflet-div-icon {
+  background: #00000000;
+  border: none;
+}
+
+.highcharts-credits {
+  display: none;
+}
+
+.navList {
+  background-color: var(--text-secondary);
+  margin: 0;
+}
+
+.navItem {
+  display: grid;
+  place-items: center;
+}
+
+.navItem:hover {
+  background-color: var(--accent-color);
+}
+
+.navItem:hover > a {
+  color: var(--text-secondary);
+}
+
+.navLink {
+  display: block;
+  padding: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.select {
+  position: relative;
+  display: flex;
+  width: 15em;
+  height: 3em;
+  line-height: 3;
+  background: var(--btn-color);
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin-bottom: 2em;
+}
+
+select {
+  flex: 1;
+  padding: 0 1em;
+  color: white;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  color: white;
+  background: var(--btn-secondary-color);
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: var(--hdr-color);
+  background-color: var(--accent-color);
+}
+
+.datePicker {
+  z-index: 500;
+}
+
+.react-datetime-picker {
+  display: flex;
+  width: max-content;
+  height: 3em;
+  line-height: 3;
+  background: var(--btn-secondary-color);
+  color: white;
+  border-radius: 0.25em;
+  margin-bottom: 2em;
+}
+
+.react-datetime-picker input {
+  color: white;
+}
+
+.react-datetime-picker svg {
+  stroke: white;
+}
+
+.react-datetime-picker__wrapper {
+  border: none;
+  border-radius: 0.25em;
+  padding: 0 1em;
+  align-items: center;
+}
+
+.download-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+
+/** Map Component */
+
+.leaflet-popup-content h4 {
+  font-weight: bold;
+
+  color: var(--accent-color);
+  margin-bottom: 0;
+}
+
+.leaflet-popup-content p {
+  margin: 2px;
+}
+
+.leaflet-popup-content {
+  height: fit-content;
+  width: fit-content;
+}
+
+/** Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  width: 30em;
+  background: #edeff1;
+  margin: 2em auto;
+  padding: 0 4em;
+  border-radius: 0.5em;
+}
+
+.form > *:last-child {
+  margin-bottom: 1rem;
+}
+
+.form > *:first-child {
+  margin-top: 1rem;
+}
+
+.form > * {
+  margin-top: 1.5rem;
+}
+
+input[type='text'],
+input[type='password'] {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: 0px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0);
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+  border: 2px solid var(--hdr-color);
+}
+
+input[type='submit'] {
+  display: block;
+  background: var(--hdr-color);
+  width: 100%;
+  padding: 1em;
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+input[type='submit']:hover {
+  background: var(--accent-color);
+}
+
+a {
+  text-align: center;
+  font-family: Arial;
+  color: gray;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+a:hover {
+  color: var(--hdr-color);
+}
+
+::-webkit-input-placeholder {
+  color: gray;
+}
+
+.sync {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--hdr-color);
+  color: white;
+  box-shadow: 0px 3px var(--accent-color);
+  margin-bottom: 1em;
+}
+
+/* Style Broken Images */
+img {
+  font-family: 'Helvetica';
+  font-weight: 300;
+  line-height: 2;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+img:before {
+  content: 'No content present';
+  display: block;
+  margin-bottom: 1rem;
+}
+
+img:after {
+  content: '(url: ' attr(src) ')';
+  display: block;
+  font-size: 12px;
+}
+
+/* Hide clock */
+.react-datetime-picker__clock {
+  display: none;
+}
+
+.parametersContainer {
+  margin: 2rem;
+  border: 0.15rem solid rgba(128, 128, 128, 0.918);
+  padding: 0.8rem;
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  max-height: 30rem;
+  width: 750px;
+  overflow-y: auto;
+}
+
+.parameters {
+  font-size: 0.9rem;
+}
+
+.costGraph {
+  width: 750px;
+
+  border-radius: 0.2rem;
+}
+
+.rainMap {
+  width: 750px;
+  border-radius: 0.2rem;
+}
